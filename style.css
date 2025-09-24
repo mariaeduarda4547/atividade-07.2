@@ -1,0 +1,132 @@
+:root {
+  /* Variáveis de Cores */
+  --primary-color: #1a1541;
+  --secondary-color: #755f8b;
+  --text-color-dark: #232224;
+  --text-color-medium: #765992;
+  --text-color-light: #9e90c4;
+  --background-color-start: #f1eaf7;
+  --background-color-end: #7d57e7;
+
+  /* Variáveis de Sombra */
+  --shadow-subtle: 0 4px 12px rgba(163, 146, 146, 0.1);
+  --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+  /* Variáveis de Espaçamento e Borda */
+  --spacing-small: 8px;
+  --spacing-medium: 15px;
+  --spacing-large: 30px;
+  --border-radius-large: 20px;
+  --border-radius-medium: 12px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Mudança para um gradiente de fundo mais suave */
+  background: linear-gradient(45deg, var(--background-color-start), var(--background-color-end));
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.form-container {
+  background: rgba(255, 255, 255, 0.1); /* fundo translúcido */
+  backdrop-filter: blur(10px); /* desfoque no fundo */
+  -webkit-backdrop-filter: blur(10px); /* suporte Safari */
+  
+  padding: 40px 35px;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-strong);
+
+  border: 1px solid white; /* borda branca de 1px */
+
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+
+  animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+h2 {
+  margin-bottom: var(--spacing-large);
+  color: var(--text-color-dark);
+  font-weight: 600;
+  font-size: clamp(24px, 5vw, 28px);
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: var(--spacing-small);
+  font-weight: 500;
+  color: var(--text-color-medium);
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: var(--spacing-medium);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  font-size: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(152, 158, 185, 0.4);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px 16px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-color-light);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: var(--spacing-medium);
+}
+
+button:hover {
+  /* Gradiente reverso no hover para um efeito visual interessante */
+  background: linear-gradient(-90deg, #6972a3, #1e152c);
+  transform: translateY(-3px) scale(1.02);
+}
+
+p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+a {
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Animação para a entrada do formulário */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
